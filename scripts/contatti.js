@@ -1,22 +1,23 @@
-const globalUsersList = [
+// Elenco contatti
+yourPropNameHere: [
     {
         name: 'Michele',
         avatar: '_1',
         visible: true,
         messages: [
             {
-                date: '13/08/2020 15:30:55',
-                text: 'Hai portato a spasso il cane?',
+                date: '10/01/2020 15:30:55',
+                message: 'Hai portato a spasso il cane?',
                 status: 'sent'
             },
             {
                 date: '10/01/2020 15:50:00',
-                text: 'Ricordati di dargli da mangiare',
+                message: 'Ricordati di dargli da mangiare',
                 status: 'sent'
             },
             {
                 date: '10/01/2020 16:15:22',
-                text: 'Tutto fatto!',
+                message: 'Tutto fatto!',
                 status: 'received'
             }
         ],
@@ -28,38 +29,39 @@ const globalUsersList = [
         messages: [
             {
                 date: '20/03/2020 16:30:00',
-                text: 'Ciao come stai?',
+                message: 'Ciao come stai?',
                 status: 'sent'
             },
             {
                 date: '20/03/2020 16:30:55',
-                text: 'Bene grazie! Stasera ci vediamo?',
+                message: 'Bene grazie! Stasera ci vediamo?',
                 status: 'received'
             },
             {
                 date: '20/03/2020 16:35:00',
-                text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                 status: 'sent'
             }
         ],
-    }, {
+    },
+    {
         name: 'Samuele',
         avatar: '_3',
         visible: true,
         messages: [
             {
                 date: '28/03/2020 10:10:40',
-                text: 'La Marianna va in campagna',
+                message: 'La Marianna va in campagna',
                 status: 'received'
             },
             {
                 date: '28/03/2020 10:20:10',
-                text: 'Sicuro di non aver sbagliato chat?',
+                message: 'Sicuro di non aver sbagliato chat?',
                 status: 'sent'
             },
             {
                 date: '28/03/2020 16:15:22',
-                text: 'Ah scusa!',
+                message: 'Ah scusa!',
                 status: 'received'
             }
         ],
@@ -71,12 +73,12 @@ const globalUsersList = [
         messages: [
             {
                 date: '10/01/2020 15:30:55',
-                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                message: 'Lo sai che ha aperto una nuova pizzeria?',
                 status: 'sent'
             },
             {
                 date: '10/01/2020 15:50:00',
-                text: 'Si, ma preferirei andare al cinema',
+                message: 'Si, ma preferirei andare al cinema',
                 status: 'received'
             }
         ],

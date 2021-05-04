@@ -1,26 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vue-Boolzap</title>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css\styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <title> Vue-Boolzapp</title>
+</head>
 
-        <link rel="stylesheet" href="css/styles.css">
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-    </head>
+<body>
+    <div id="app" class="container">
 
-    <body>
-        <div id="app" class="container">
-    
+        <div class="container_green"></div>
+
+        <aside class="contact_bar">
+            <section class="header_contact">
+                <div>
+                    <img class="img_avatar" src="img/avatar_io.jpg" alt="">
+                </div>
+                <ul class="header_ic">
+                    <li class="icone_header">
+                        <i class="fas fa-circle-notch"></i>
+                    </li>
+                    <li class="icone_header">
+                        <i class="fas fa-comment-alt"></i>
+                    </li>
+                    <li class="icone_header">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="barra_notifiche">
+                <div>
+                    <div class="contenuto_notifiche">
+                        <i class="fas fa-bell-slash campanella"></i>
+                    </div>
+                </div>
+                <ul>
+                    <li class="text_notifiche">
+                        <h5>Ricevi notifiche di nuovi messaggi</h5>
+                    </li>
+                    <li class="text_notifiche">
+                        <h5> <u>Attiva notifiche desktop</u></h5>
+                    </li>
+                </ul>
+            </section>
+
+
+            <section class="bar_search">
+                <button class="icon_search">
+                    <i class="fas fa-search">
+                        <a href="#"></a>
+                    </i>
+                </button>
+                <input class="search" placeholder="Cerca o inzia una nuova chat">
+            </section>
+
+
+            <section class="rubrica">
+                <div class="contact" v-for="(contact, index) in globalUsersList">
+
+                    <img class="img-contact" :src="'./img/avatar' + contact.avatar + '.jpg'">
+                    <h4 class="name-contact">{{contact.name}}</h4>
+                </div>
+            </section>
+        </aside>
+
+
+        <div class="box_chat">
+            <section class="chat_contact">
+                <div>
+                    <img class="img-contact" :src="`./img/avatar${globalUsersList[contactActive].avatar}.jpg`">
+                </div>
+                <ul class="notifiche_descr">
+                    <li class="text_notifiche">
+                        <h5> {{globalUsersList[contactActive].name}}</h5>
+                    </li>
+                    <li class="text_notifiche">
+                        <h6>Ultimo Accesso oggi alle 09:18</h6>
+                    </li>
+                </ul>
+                <ul class="icone_chat">
+                    <li class="chat_icons">
+                        <i class="fas fa-search"></i>
+                    </li>
+                    <li class="chat_icons">
+                        <i class="fas fa-paperclip"></i>
+                    </li>
+                    <li class="chat_icons">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </li>
+                </ul>
+            </section>
+
+
+            <section class="text-chat">
+                <div class="sent" v-for="item in globalUsersList[contactActive].messages" :class="item.status">
+                    <p class="testo">{{item.message}}</p>
+                </div>
+            </section>
+
+
+            <section class="input_chat">
+                <i class="far fa-smile f-i "></i>
+                <i class="fas fa-microphone f-i"></i>
+            </section>
         </div>
-    
+    </div>
 
-        <script src="scripts/data.js"></script>
-        <script src="scripts/app.js"></script>
-    </body>
+
+    <script src="scripts\script.js"></script>
+</body>
 
 </html>
