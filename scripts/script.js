@@ -1,13 +1,15 @@
+
 const app = new Vue({
     el: '#app',
+  
+    
     data: {
+        
         contactActive: 0,
-
-        user: {
-        },
+        
         globalUsersList: [
             {
-                name: 'Sheldon',
+                name: 'Sheldon Cooper',
                 avatar: '_1',
                 visible: true,
                 messages: [
@@ -29,7 +31,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Leonard',
+                name: 'Leonard Hofstadter',
                 avatar: '_2',
                 visible: true,
                 messages: [
@@ -73,7 +75,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Raj',
+                name: 'Raj Koothrappali',
                 avatar: '_4',
                 visible: true,
                 messages: [
@@ -95,7 +97,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Howard',
+                name: 'Howard Wolowitz',
                 avatar: '_5',
                 visible: true,
                 messages: [
@@ -118,7 +120,7 @@ const app = new Vue({
             },
 
             {
-                name: 'Bernadette',
+                name: 'Bernadette Rostenkowski',
                 avatar: '_6',
                 visible: true,
                 messages: [
@@ -140,7 +142,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Amy',
+                name: 'Amy Farrah Fowler',
                 avatar: '_7',
                 visible: true,
                 messages: [
@@ -162,7 +164,7 @@ const app = new Vue({
                 ],
             },
             {
-                name: 'Stuart',
+                name: 'Stuart Bloom',
                 avatar: '_8',
                 visible: true,
                 messages: [
@@ -178,14 +180,44 @@ const app = new Vue({
                     }
                 ],
             },
+            {
+                name: 'Will Wheaton',
+                avatar: '_9',
+                visible: true,
+                messages: [
+                    {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Lo sai che ha aperto una nuova pizzeria?',
+                        status: 'sent'
+                    },
+                    {
+                        date: '10/01/2020 15:50:00',
+                        message: 'Si, ma preferirei andare al cinema',
+                        status: 'received'
+                    }
+                ],
+            },
         ],
-
     },
+
     methods: {
+        setContactActive(index) {
+            this.contactActive = index;
+        },
+       
         search() {
 
-            this.globalUsersList.forEach((_element) => {
+            this.globalUsersList.forEach((element) => {
+
+                let nameContact = this.searchContact.toLowerCase();
+
+                if (!element.name.toLowerCase().includes(nameContact)) {
+                    element.visible = false
+                } else {
+                    element.visible = true;
+                };
             })
         },
     },
+
 });

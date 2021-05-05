@@ -15,7 +15,6 @@
 <body>
     <div id="app" class="container">
 
-        <div class="container_green"></div>
 
         <aside class="contact_bar">
             <section class="header_contact">
@@ -58,13 +57,16 @@
                         <a href="#"></a>
                     </i>
                 </button>
-                <input class="search" placeholder="Cerca o inzia una nuova chat">
+                <input class="search" type="text" placeholder="Cerca o inzia una nuova chat" v-model="searchContact" @keyup="search">
             </section>
 
 
             <section class="rubrica">
-                <div class="contact" v-for="(contact, index) in globalUsersList">
-
+                <div class="contact" 
+                v-for="(contact, index) in globalUsersList" @click="setContactActive(index)" 
+                :class="{active: index === contactActive}"
+                v-show="contact.visible">
+                
                     <img class="img-contact" :src="'./img/avatar' + contact.avatar + '.jpg'">
                     <h4 class="name-contact">{{contact.name}}</h4>
                 </div>
@@ -102,18 +104,21 @@
             <section class="text-chat">
                 <div class="sent" v-for="item in globalUsersList[contactActive].messages" :class="item.status">
                     <p class="testo">{{item.message}}</p>
+                    <p class="date">{{item.date}} </p>
                 </div>
             </section>
 
 
             <section class="input_chat">
                 <i class="far fa-smile f-i "></i>
+
+                <input  class="new-message"
+                placeholder="Inserisci un nuovo messaggio"/>
+
                 <i class="fas fa-microphone f-i"></i>
             </section>
-        </div>
-    </div>
-
-
+         
+<!--  -->
     <script src="scripts\script.js"></script>
 </body>
 

@@ -23,6 +23,10 @@ body {
     background:white;
 }
 
+.img_avatar {
+    width: 50px;
+}
+
 .header_ic {
     display: inline-block;
     margin-left: 185px;
@@ -61,10 +65,6 @@ body {
     height: 500px;
 }
    
-.img_avatar {
-    width: 50px;
-}
-
 .img-contact {
     width:50px;
 }
@@ -142,7 +142,7 @@ body {
     margin-left:25px ;
  }
 
- .input_chat {
+.input_chat {
     display: flex;
     justify-content: flex-start;
     padding: 10px;
@@ -154,15 +154,19 @@ body {
     margin-left: 475px;
 }
 
- .new-message {
+.new-message {
      padding:10px;
+     width:100%;
+     border-radius: 5px;
+     border: none;
+
  }
 
  .f-i {
      padding:15px;
  }
 
- .bar_search {
+.bar_search {
     padding: 12px;
 }
 
@@ -174,3 +178,37 @@ body {
 i {
     color:rgb(148, 148, 148)
 }
+
+.campanella{
+    color:#0db2fa6b ;
+}
+
+.contact:hover{
+    background:#d0d6d5
+}
+
+.contact:last-child{
+    border-bottom: none;
+}
+
+.image-contact{
+    background-color: rgb(255, 255, 255);
+    padding: 10px 25px 15px 20px;
+    border-radius: 50%;
+    margin-right: 10px; 
+}
+
+.testo{
+    padding: 5px;
+    max-width: 250px;
+ }
+
+ .date{
+     font-size: 10px;
+     text-align: right;
+ }
+
+
+
+
+
