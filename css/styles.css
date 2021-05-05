@@ -119,3 +119,52 @@ body {
     padding: 12px; 
     list-style: none;
  }
+
+ .sent {
+    background: #d5f1c0;
+    margin-left: 485px;
+    padding:10px;
+    border-radius: 5px;
+    margin-right: 12px;
+    margin-bottom: 8px;
+}
+ 
+ .received {
+    background: #ffffff;
+    padding: 8px;
+    margin-right:490px ;
+    margin-left:25px ;
+ }
+
+ .input_chat {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    background:#ffffff;
+    height: 50px;
+ }
+
+ .icone_chat {
+    margin-left: 475px;
+}
+
+ .new-message {
+     padding:10px;
+ }
+
+ .f-i {
+     padding:15px;
+ }
+
+ .bar_search {
+    padding: 12px;
+}
+
+.icone_header {
+    display: inline-block;
+    margin: 8px;
+}
+
+i {
+    color:rgb(148, 148, 148)
+}
