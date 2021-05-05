@@ -47,14 +47,20 @@ body {
 .search {
     width: 80%;
     border: none;
+
 }
 
 .contact {
-    display:flex; 
+   display: flex;
     padding: 10px;
     border-bottom: 1px solid rgb(187, 187, 187); 
 }
 
+.rubrica {
+    overflow: auto;
+    height: 500px;
+}
+   
 .img_avatar {
     width: 50px;
 }
