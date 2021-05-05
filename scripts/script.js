@@ -1,6 +1,5 @@
 const app = new Vue({
     el: '#app',
-
     data: {
         contactActive: 0,
 
@@ -185,9 +184,8 @@ const app = new Vue({
     methods: {
         search() {
 
-            this.globalUsersList.forEach((element) => {
+            this.globalUsersList.forEach((_element) => {
             })
         },
     },
-
 });
