@@ -24,17 +24,20 @@ body {
 }
 
 .img_avatar {
+    margin-left: 10px;
     width: 50px;
 }
 
 .header_ic {
     display: inline-block;
-    margin-left: 185px;
+    margin-left: 140px;
 }
 
 .header_contact {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+    height: 90px;
 }
 
 .contact_bar {
@@ -55,7 +58,7 @@ body {
 }
 
 .contact {
-   display: flex;
+    display: flex;
     padding: 10px;
     border-bottom: 1px solid rgb(187, 187, 187); 
 }
@@ -64,7 +67,7 @@ body {
     overflow: auto;
     height: 500px;
 }
-   
+
 .img-contact {
     width:50px;
 }
@@ -79,6 +82,10 @@ body {
     padding: 10px;
 }
 
+.notifiche_descr {
+   position: absolute;
+   margin-left: 50px;
+}
 .contenuto_notifiche {
     background-color: rgb(255, 255, 255);
     padding: 6px;
@@ -103,9 +110,14 @@ body {
     padding:26px;
     background:#f0f0f0;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     padding:10px;
+    justify-content: space-between;
+}
+
+.text {
+    height: 30px;
+    width: 170px;
 }
 
 .text-chat p {
@@ -113,7 +125,7 @@ body {
 }
 
 .text-chat {
-    background-image: url(/img/mine.jpg);
+    background-image: url(/imgs/mine.jpg);
     display: flex;
     flex-grow: 1;
     flex-direction: column;
@@ -144,26 +156,29 @@ body {
 
 .input_chat {
     display: flex;
-    justify-content: flex-start;
     padding: 10px;
     background:#ffffff;
-    height: 50px;
+    height: 70px;
+    width: max-content;
+ }
+
+ .new-message {
+    width: 650px;
+    padding:10px;
+    border-radius: 5px;
+    border: none;
  }
 
  .icone_chat {
     margin-left: 475px;
 }
 
-.new-message {
-     padding:10px;
-     width:100%;
-     border-radius: 5px;
-     border: none;
-
- }
-
  .f-i {
      padding:15px;
+ }
+
+ .f-mic{
+     margin-left: 300
  }
 
 .bar_search {
@@ -187,10 +202,6 @@ i {
     background:#d0d6d5
 }
 
-.contact:last-child{
-    border-bottom: none;
-}
-
 .image-contact{
     background-color: rgb(255, 255, 255);
     padding: 10px 25px 15px 20px;
@@ -199,16 +210,11 @@ i {
 }
 
 .testo{
-    padding: 5px;
-    max-width: 250px;
+    max-width: 600px;
+    max-height: 5px;
  }
 
  .date{
      font-size: 10px;
      text-align: right;
  }
-
-
-
-
-
