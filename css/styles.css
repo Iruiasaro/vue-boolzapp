@@ -30,7 +30,6 @@ body {
 
 .header_ic {
     display: inline-block;
-    margin-left: 140px;
 }
 
 .header_contact {
@@ -41,7 +40,7 @@ body {
 }
 
 .contact_bar {
-    flex-basis: 32%;
+    flex-basis: 36%;
     background: white;
 }
 
@@ -54,18 +53,16 @@ body {
 .search {
     width: 80%;
     border: none;
-
 }
 
 .contact {
-    display: flex;
     padding: 10px;
     border-bottom: 1px solid rgb(187, 187, 187); 
 }
 
 .rubrica {
+    height: 60%;
     overflow: auto;
-    height: 500px;
 }
 
 .img-contact {
@@ -73,6 +70,7 @@ body {
 }
 
 .name-contact {
+    font-size: 18px;
     padding:10px;
 }
 
@@ -107,21 +105,29 @@ body {
 }
 
 .chat_contact {
-    padding:26px;
-    background:#f0f0f0;
     display: flex;
+    background:#f1eeee;
     align-items: center;
     padding:10px;
     justify-content: space-between;
 }
 
 .text {
+    width: 80%;
+    border-radius: 5px;
     height: 30px;
-    width: 170px;
+    border: none;
+
 }
 
 .text-chat p {
     margin: 15px;
+}
+
+.x-icon {
+    color: gray;
+    margin-top: 10px;
+    margin-left: 5px;
 }
 
 .text-chat {
@@ -155,15 +161,20 @@ body {
  }
 
 .input_chat {
-    display: flex;
     padding: 10px;
+    background:#f0f0f0;
+    display: flex;
+    justify-content: flex-start;
+     display: flex;
+     justify-content: space-between;
+    /* padding: 10px;
     background:#ffffff;
     height: 70px;
-    width: max-content;
+    width: max-content; */
  }
 
  .new-message {
-    width: 650px;
+    width:80%;
     padding:10px;
     border-radius: 5px;
     border: none;
@@ -177,13 +188,10 @@ body {
      padding:15px;
  }
 
- .f-mic{
-     margin-left: 300
- }
-
 .bar_search {
-    padding: 12px;
-}
+    padding:5px;
+    background-color: rgb(158 158 158 / 8%);
+    display: flex;}
 
 .icone_header {
     display: inline-block;

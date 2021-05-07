@@ -1,6 +1,7 @@
 const globalUsersList = [
     {
         name: 'Sheldon Cooper',
+        ultimoAccesso: "16:15",
         avatar: 'imgs/avatar_1.jpg',
         visible: true,
         messages: [
@@ -23,6 +24,7 @@ const globalUsersList = [
     },
     {
         name: 'Leonard Hofstadter',
+        ultimoAccesso: "16:15",
         avatar: 'imgs/avatar_2.jpg',
         visible: true,
         messages: [
@@ -45,6 +47,7 @@ const globalUsersList = [
     },
     {
         name: 'Penny',
+        ultimoAccesso: "16:15",
         avatar: 'imgs/avatar_3.jpg',
         visible: true,
         messages: [
@@ -67,6 +70,7 @@ const globalUsersList = [
     },
     {
         name: 'Raj Koothrappali',
+        ultimoAccesso: "16:15",
         avatar: 'imgs/avatar_4.jpg',
         visible: true,
         messages: [
@@ -89,6 +93,7 @@ const globalUsersList = [
     },
     {
         name: 'Howard Wolowitz',
+        ultimoAccesso: "16:15",
         avatar: 'imgs/avatar_5.jpg',
         visible: true,
         messages: [
@@ -112,6 +117,7 @@ const globalUsersList = [
 
     {
         name: 'Bernadette Rostenkowski',
+        ultimoAccesso: "16:30",
         avatar: 'imgs/avatar_6.jpg',
         visible: true,
         messages: [
@@ -134,6 +140,7 @@ const globalUsersList = [
     },
     {
         name: 'Amy Farrah Fowler',
+        ultimoAccesso: "16:15",
         avatar: 'imgs/avatar_7.jpg',
         visible: true,
         messages: [
@@ -156,6 +163,7 @@ const globalUsersList = [
     },
     {
         name: 'Stuart Bloom',
+        ultimoAccesso: "15:50",
         avatar: 'imgs/avatar_8.jpg',
         visible: true,
         messages: [
@@ -173,6 +181,7 @@ const globalUsersList = [
     },
     {
         name: 'Will Wheaton',
+        ultimoAccesso: "15:50",
         avatar: 'imgs/avatar_9.jpg',
         visible: true,
         messages: [

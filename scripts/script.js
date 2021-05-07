@@ -48,6 +48,11 @@ let app = new Vue({
                 }, 1000);
             }
         },
+            visualizzaMsg(contatto) {
+                const msgChatContact = contatto.messages[contatto.messages.length - 1]
+                return msgChatContact;
+            },
+
             cleanX() {
                 this.searchContact = "";
             },
