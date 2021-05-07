@@ -1,223 +1,56 @@
+let app = new Vue({
+    el: "#root",
 
-const app = new Vue({
-    el: '#app',
-  
-    
     data: {
-        
-        contactActive: 0,
-        
-        globalUsersList: [
-            {
-                name: 'Sheldon Cooper',
-                avatar: '_1',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        message: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Leonard Hofstadter',
-                avatar: '_2',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        message: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Penny',
-                avatar: '_3',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        message: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Raj Koothrappali',
-                avatar: '_4',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        message: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Howard Wolowitz',
-                avatar: '_5',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Ricordati di dargli da mangiare',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 16:15:22',
-                        message: 'Tutto fatto!',
-                        status: 'received'
-                    }
-                ],
-            },
-
-            {
-                name: 'Bernadette Rostenkowski',
-                avatar: '_6',
-                visible: true,
-                messages: [
-                    {
-                        date: '20/03/2020 16:30:00',
-                        message: 'Ciao come stai?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '20/03/2020 16:30:55',
-                        message: 'Bene grazie! Stasera ci vediamo?',
-                        status: 'received'
-                    },
-                    {
-                        date: '20/03/2020 16:35:00',
-                        message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                        status: 'sent'
-                    }
-                ],
-            },
-            {
-                name: 'Amy Farrah Fowler',
-                avatar: '_7',
-                visible: true,
-                messages: [
-                    {
-                        date: '28/03/2020 10:10:40',
-                        message: 'La Marianna va in campagna',
-                        status: 'received'
-                    },
-                    {
-                        date: '28/03/2020 10:20:10',
-                        message: 'Sicuro di non aver sbagliato chat?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '28/03/2020 16:15:22',
-                        message: 'Ah scusa!',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Stuart Bloom',
-                avatar: '_8',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
-                    }
-                ],
-            },
-            {
-                name: 'Will Wheaton',
-                avatar: '_9',
-                visible: true,
-                messages: [
-                    {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Lo sai che ha aperto una nuova pizzeria?',
-                        status: 'sent'
-                    },
-                    {
-                        date: '10/01/2020 15:50:00',
-                        message: 'Si, ma preferirei andare al cinema',
-                        status: 'received'
-                    }
-                ],
-            },
-        ],
+        usersList: globalUsersList,
+        activeContact: 0,
+        searchContact: "",
+        invioMsg: "",
     },
 
     methods: {
-        setContactActive(index) {
-            this.contactActive = index;
+        contatcSelected(contatto) {
+            this.activeContact = this.ricercaContatto()[contatto];
         },
-       
-        search() {
-
-            this.globalUsersList.forEach((element) => {
-
-                let nameContact = this.searchContact.toLowerCase();
-
-                if (!element.name.toLowerCase().includes(nameContact)) {
-                    element.visible = false
-                } else {
-                    element.visible = true;
-                };
+        ricercaContatto() {
+            let filtList = this.usersList.filter((contact) => {
+                return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
             })
+            return filtList;
+        },
+
+        timeDate(dateString) {
+            let dateFromString = moment(dateString, "DD/MM/YYYY HH/mm/ss").format("HH:mm");
+            return dateFromString;
+        },
+
+        addMessage() {
+            let sentMsg =
+            {
+                status: 'sent',
+                date: moment(),
+                text: this.invioMsg,
+            }
+            if (this.invioMsg) {
+                let contactSelect = this.activeContact;
+                contactSelect.messages.push(sentMsg);
+                this.invioMsg = "";
+
+                setTimeout(() => {
+                    let receivedMsg =
+                    {
+                        status: 'received',
+                        text: "Ok!",
+                        date: moment(),
+                    }
+                    contactSelect.messages.push(receivedMsg);
+                    contactSelect.ultimoAccesso = this.timeDate(receivedMsg.date);
+                    
+                }, 1000);
+            }
         },
     },
-
-});
+    mounted() {
+        this.activeContact = this.usersList[0];
+    }
+})
