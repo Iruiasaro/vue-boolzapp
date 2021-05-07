@@ -57,6 +57,8 @@
                         </button>
                         <input  class="text" placeholder="Ricerca contatto"
                             v-model="searchContact" @input="ricercaContatto()" type="text">
+
+                            <i class="fas fa-times" v-if="searchContact" @click="cleanX"></i>
                     </section>
 
                     <section class="rubrica">

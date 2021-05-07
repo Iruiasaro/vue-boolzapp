@@ -45,11 +45,13 @@ let app = new Vue({
                     }
                     contactSelect.messages.push(receivedMsg);
                     contactSelect.ultimoAccesso = this.timeDate(receivedMsg.date);
-                    
                 }, 1000);
             }
         },
-    },
+            cleanX() {
+                this.searchContact = "";
+            },
+        },
     mounted() {
         this.activeContact = this.usersList[0];
     }
