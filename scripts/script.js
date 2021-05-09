@@ -1,4 +1,4 @@
-const app = new Vue({
+let app = new Vue({
     el: "#root",
 
     data: {
@@ -14,33 +14,31 @@ const app = new Vue({
         },
         // ricerca contatto e filtra una nuova lista
         ricercaContatto() {
-            const filtList = this.usersList.filter((contact) => {
+            let filtList = this.usersList.filter((contact) => {
                 return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
             })
             return filtList;
         },
-            
-        //funzione Data
+          
         timeDate(dateString) {
-            const dateReturn = moment(dateString, "DD/MM/YYYY HH/mm/ss").format("HH:mm");
-            return dateReturn;
+            let dateFromString = moment(dateString, "DD/MM/YYYY HH/mm/ss").format("HH:mm");
+            return dateFromString;
         },
 
         addMessage() {
-            const sentMsg =
+            let sentMsg =
             {
                 status: 'sent',
                 date: moment(),
                 text: this.invioMsg,
             }
             if (this.invioMsg) {
-                const contactSelect = this.activeContact;
+                let contactSelect = this.activeContact;
                 contactSelect.messages.push(sentMsg);
                 this.invioMsg = "";
 
-                //set timeOut per risposta automatica
                 setTimeout(() => {
-                    const receivedMsg =
+                    let receivedMsg =
                     {
                         status: 'received',
                         text: "Ok!",
@@ -50,27 +48,28 @@ const app = new Vue({
                     contactSelect.ultimoAccesso = this.timeDate(receivedMsg.date);
                 }, 100);
             };
+            
+          //allinea la chat all'ultimo messaggio 
+            this.scrollToBottom()
+        },
+            visualizzaMsg(contatto) {
+                const msgChatContact = contatto.messages[contatto.messages.length - 1]
+                return msgChatContact;
+            },
 
-            this.bottomScroll()
-        },
+          
 
-        visualizzaMsg(contatto) {
-            const msgChatContact = contatto.messages[contatto.messages.length - 1]
-            return msgChatContact;
-        },
+            scrollToBottom() {
+                setTimeout(() => {
+                    this.$refs.wrapperChat.scrollTop = this.$refs.wrapperChat.scrollHeight
+                }, 100);
+            },
 
-        //pulisce barra di ricerca contatto rubrica
-        cleanX() {
-            this.searchContact = "";
+            //pulisce barra di ricerca contatto rubru
+            cleanX() {
+                this.searchContact = "";
+            },
         },
-        
-        //allinea la chat all'ultimo messaggio 
-        bottomScroll() {
-            setTimeout(() => {
-                this.$refs.wrapperChat.scrollTop = this.$refs.wrapperChat.scrollHeight
-            }, 100);
-        },
-    },
 
     mounted() {
         this.activeContact = this.usersList[0];

@@ -71,7 +71,7 @@
             </section>
 
             <section class="rubrica">
-                    <div class="contact" @click="contatcSelected(index)" v-for="(contatto) in ricercaContatto()"
+                    <div class="contact" @click="contatcSelected(index)" v-for="(contatto,index) in ricercaContatto()"
                         :class="{selected: contatto == activeContact}">
                         <div class="immagine">
                             <img class="img-contact" :src="contatto.avatar">
