@@ -13,8 +13,15 @@
 </head>
 
 <body>
+    <!-- contenitore  -->
     <div id="root" class="container">
 
+        <!-- header verde -->
+        <div class="header_green"></div>
+
+        <div class="wrapper">
+
+            <!-- aside dei contatti -->
         <aside class="contact_bar">
             <section class="header_contact">
                 <div>
@@ -56,7 +63,7 @@
                     </i>
                 </button>
 
-                <input class="text" placeholder="Ricerca contatto" v-model="searchContact" @input="ricercaContatto()"
+                <input class="text" placeholder="Ricerca contatto . . ." v-model="searchContact" @input="ricercaContatto()"
                     type="text">
                 <i class="fas fa-times x-icon" v-if="searchContact" @click="cleanX"></i>
 
@@ -64,30 +71,25 @@
             </section>
 
             <section class="rubrica">
-                <ul>
-                    <li class="contact" @click="contatcSelected(index)" v-for="(contatto, index) in ricercaContatto()"
+                    <div class="contact" @click="contatcSelected(index)" v-for="(contatto) in ricercaContatto()"
                         :class="{selected: contatto == activeContact}">
-                        <div>
+                        <div class="immagine">
                             <img class="img-contact" :src="contatto.avatar">
+                            <span class="text_rubrica"> {{contatto.name}}</span>
                         </div>
-                        <div>
-                            <span> {{contatto.name}}</span>
-                            <br>
+                        <div class="text_test">
                             <span> {{visualizzaMsg(contatto).message}}</span>
-                            <br>
-                            <span> '{{timeDate(visualizzaMsg(contatto).date)}}'</span>
-
+                            <span> {{timeDate(visualizzaMsg(contatto).date)}}</span>
                         </div>
-
-                    </li>
-                </ul>
+                    </div>
             </section>
         </aside>
 
+        <!-- sezione chat -->
         <div class="box_chat">
             <section class="chat_contact">
                 <div>
-                    <img class="img-contact" :src="activeContact.avatar" alt="">
+                    <img class="img-contact" :src="activeContact.avatar">
                 </div>
                 <ul class="notifiche_descr">
                     <li class="text_notifiche">
@@ -109,26 +111,30 @@
                     </li>
                 </ul>
             </section>
+            
 
-            <section class="text-chat">
-                <div class="sent" v-for="contatto in activeContact.messages"
+            <section class="text-chat" ref="wrapperChat">
+                <div class="inviato" v-for="contatto in activeContact.messages"
                     :class="(contatto.status == 'sent')? 'sent' : 'received'">
+                <div class="freccina"></div>
                     <p class="testo">{{contatto.message}}</p>
                     <p class="testo">{{contatto.text}}</p>
                     <p class="date">{{timeDate(contatto.date)}}</p>
+                    <i class="fa fa-chevron-down"></i>
                 </div>
             </section>
 
-            <section class="input_chat">
+            <section class= "input_chat">
                 <i class="far fa-smile f-i"></i>
 
                 <input type="text" class="new-message" @keyup.enter="addMessage()" v-model="invioMsg"
                     placeholder="Digita un nuovo messaggio">
-
                 <i class="fas fa-microphone f-i"></i>
             </section>
         </div>
-
+    </div>
+    
+              <!-- collegamento JS -->
         <script src="scripts\data.js"></script>
         <script src="scripts\script.js"></script>
 </body>

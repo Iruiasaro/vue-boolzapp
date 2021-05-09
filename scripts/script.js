@@ -1,4 +1,4 @@
-let app = new Vue({
+const app = new Vue({
     el: "#root",
 
     data: {
@@ -12,32 +12,35 @@ let app = new Vue({
         contatcSelected(contatto) {
             this.activeContact = this.ricercaContatto()[contatto];
         },
+        // ricerca contatto e filtra una nuova lista
         ricercaContatto() {
-            let filtList = this.usersList.filter((contact) => {
+            const filtList = this.usersList.filter((contact) => {
                 return contact.name.toLowerCase().includes(this.searchContact.toLowerCase());
             })
             return filtList;
         },
-
+            
+        //funzione Data
         timeDate(dateString) {
-            let dateFromString = moment(dateString, "DD/MM/YYYY HH/mm/ss").format("HH:mm");
-            return dateFromString;
+            const dateReturn = moment(dateString, "DD/MM/YYYY HH/mm/ss").format("HH:mm");
+            return dateReturn;
         },
 
         addMessage() {
-            let sentMsg =
+            const sentMsg =
             {
                 status: 'sent',
                 date: moment(),
                 text: this.invioMsg,
             }
             if (this.invioMsg) {
-                let contactSelect = this.activeContact;
+                const contactSelect = this.activeContact;
                 contactSelect.messages.push(sentMsg);
                 this.invioMsg = "";
 
+                //set timeOut per risposta automatica
                 setTimeout(() => {
-                    let receivedMsg =
+                    const receivedMsg =
                     {
                         status: 'received',
                         text: "Ok!",
@@ -45,18 +48,30 @@ let app = new Vue({
                     }
                     contactSelect.messages.push(receivedMsg);
                     contactSelect.ultimoAccesso = this.timeDate(receivedMsg.date);
-                }, 1000);
-            }
-        },
-            visualizzaMsg(contatto) {
-                const msgChatContact = contatto.messages[contatto.messages.length - 1]
-                return msgChatContact;
-            },
+                }, 100);
+            };
 
-            cleanX() {
-                this.searchContact = "";
-            },
+            this.bottomScroll()
         },
+
+        visualizzaMsg(contatto) {
+            const msgChatContact = contatto.messages[contatto.messages.length - 1]
+            return msgChatContact;
+        },
+
+        //pulisce barra di ricerca contatto rubrica
+        cleanX() {
+            this.searchContact = "";
+        },
+        
+        //allinea la chat all'ultimo messaggio 
+        bottomScroll() {
+            setTimeout(() => {
+                this.$refs.wrapperChat.scrollTop = this.$refs.wrapperChat.scrollHeight
+            }, 100);
+        },
+    },
+
     mounted() {
         this.activeContact = this.usersList[0];
     }

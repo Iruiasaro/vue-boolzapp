@@ -8,19 +8,26 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
     height: 100vh;
-    background: linear-gradient(#128C7E 14%, #bdbdbd 10%);
+    position: relative;
+    background-color: rgb(218, 219, 213);
 }
 
-.container {
-    display: flex;
-    width: 80%;
-    height: 93%;
-    background:white;
+.header_green {
+    background-color: rgb(64, 169, 155);
+    height: 100px;
+    width: 100%;
+}
+
+.wrapper {
+display: flex;
+width: 90%;
+position: absolute;
+top: 30px;
+bottom: 30px;
+left: 50%;
+transform: translateX(-50%);
 }
 
 .img_avatar {
@@ -34,15 +41,23 @@ body {
 
 .header_contact {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 90px;
+    justify-content: space-between;
+    background-color: rgb(211, 211, 211);
+    height: 70px;
+    color: rgb(128, 128, 128);
+    width: 100%;
+   flex-shrink: 0;
 }
 
 .contact_bar {
-    flex-basis: 36%;
-    background: white;
-}
+    display: flex;
+    border-right: 1px solid rgb(189, 173, 173);
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-basis: 380px;
+    height: 100%;
+  }
 
 .icon_search {
     width: 10%;
@@ -55,28 +70,71 @@ body {
     border: none;
 }
 
-.contact {
-    padding: 10px;
-    border-bottom: 1px solid rgb(187, 187, 187); 
-}
-
 .rubrica {
-    height: 60%;
+    flex-grow: 1;
+    background-color: rgb(237, 237, 237);
     overflow: auto;
 }
 
-.img-contact {
-    width:50px;
+.contact {
+    display:flex; 
+    flex-direction: column ;
+    padding: 10px 5px;
+    background:white;
+    border-bottom: 1px solid rgb(211 211 211); 
+
 }
 
+.contact .selected {
+    display:flex; 
+    flex-direction: column ;
+    padding: 10px 5px;
+    background:white;
+    border-bottom: 1px solid rgb(211 211 211); 
+    }
+
+.immagine {
+    display: flex;
+    flex-direction: row;
+}
+
+.text_test {
+    font-size: 10px;
+    margin-top: -30px;
+    margin-left: 80px;
+    color: rgb(0, 0, 0);
+}
+
+
+.img-contact {
+    width: 15%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin-left: 10px;
+
+}
+
+.text_rubrica {
+    display: flex;
+    flex-direction: column ;
+    color: rgb(0, 0, 0);
+    margin-left: 30px;
+    font-weight: 900;
+}
+
+.text_test {
+    display: flex;
+    flex-direction: column;
+    padding-top: 11px;
+} 
+
 .name-contact {
-    font-size: 18px;
     padding:10px;
 }
 
 .barra_notifiche {
     display: flex;
-    background-color:  #3297c26b;
+    background-color: rgb(233, 231, 231);
     padding: 10px;
 }
 
@@ -84,6 +142,7 @@ body {
    position: absolute;
    margin-left: 50px;
 }
+
 .contenuto_notifiche {
     background-color: rgb(255, 255, 255);
     padding: 6px;
@@ -101,27 +160,60 @@ body {
 .box_chat {
     display: flex;
     flex-direction: column;
-    flex-basis:100%;
+    height: 100%;
+    flex-grow: 1;
 }
 
 .chat_contact {
     display: flex;
-    background:#f1eeee;
     align-items: center;
-    padding:10px;
     justify-content: space-between;
+    background-color: rgb(211, 211, 211);
+    height: 60px;
+    color: rgb(128, 128, 128);
+    flex-shrink: 0;
 }
 
 .text {
-    width: 80%;
+    width: 100%;
     border-radius: 5px;
-    height: 30px;
+    height: 35px;
     border: none;
-
+    padding-left: 15px;
+    border-radius: 10px;
 }
 
 .text-chat p {
-    margin: 15px;
+    margin-top:10px;
+}
+
+.testo{
+    max-width: 600px;
+    max-height: 5px;
+ }
+
+ .inviato {
+    position: relative;
+    border-radius: 2px;
+    margin: 5px;
+}
+
+ .freccina {
+    position: absolute;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    width: 0; 
+    height: 0; 
+    top: 0;
+ }
+
+.sent .freccina {
+    border-top: 9px solid #d5f1c0;
+    right: -9px;
+}
+.received .freccina {
+    border-top: 9px solid #ffffff;
+     left: -9px;   
 }
 
 .x-icon {
@@ -132,56 +224,53 @@ body {
 
 .text-chat {
     background-image: url(/imgs/mine.jpg);
-    display: flex;
+    height: 100%;
+    overflow: auto;
     flex-grow: 1;
-    flex-direction: column;
-    padding: 15px;
+    padding-top: 10px;
 }
 
  .chat_icons {
     display: inline-block;
-    padding: 12px; 
     list-style: none;
+    padding: 8px; 
  }
 
  .sent {
+    display: flex;
+    flex-direction: column;
     background: #d5f1c0;
-    margin-left: 485px;
     padding:10px;
     border-radius: 5px;
-    margin-right: 12px;
+    margin-right: 20px;
     margin-bottom: 8px;
+    margin-left: 530px;
 }
  
  .received {
+    display: flex;
+    flex-direction: column;
     background: #ffffff;
     padding: 8px;
-    margin-right:490px ;
-    margin-left:25px ;
+    margin-right: 530px;
+    margin-left: 20px;
  }
 
 .input_chat {
-    padding: 10px;
-    background:#f0f0f0;
     display: flex;
-    justify-content: flex-start;
-     display: flex;
-     justify-content: space-between;
-    /* padding: 10px;
-    background:#ffffff;
-    height: 70px;
-    width: max-content; */
+    justify-content: space-around;
+    background-color: rgb(233, 231, 231);
  }
 
  .new-message {
-    width:80%;
-    padding:10px;
+    width:90%;
+    padding:8px;
     border-radius: 5px;
     border: none;
  }
 
  .icone_chat {
-    margin-left: 475px;
+    margin-left: 350px;
 }
 
  .f-i {
@@ -189,9 +278,10 @@ body {
  }
 
 .bar_search {
-    padding:5px;
-    background-color: rgb(158 158 158 / 8%);
-    display: flex;}
+    display: flex;
+    padding:8px;
+    background-color: rgb(233, 231, 231);
+}
 
 .icone_header {
     display: inline-block;
@@ -206,23 +296,22 @@ i {
     color:#0db2fa6b ;
 }
 
-.contact:hover{
-    background:#d0d6d5
-}
-
 .image-contact{
     background-color: rgb(255, 255, 255);
     padding: 10px 25px 15px 20px;
     border-radius: 50%;
-    margin-right: 10px; 
 }
 
-.testo{
-    max-width: 600px;
-    max-height: 5px;
- }
-
- .date{
-     font-size: 10px;
+ .date {
+     font-size: 8px;
      text-align: right;
  }
+
+.fa-chevron-down {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 12px;
+    color: rgb(192, 184, 184);
+    display: none;
+}
